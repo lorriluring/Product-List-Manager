@@ -104,7 +104,7 @@ Product: laban-231
 
 | Name | GitHub |
 | --- | --- |
-| Your Name | [@your-username](https://github.com/your-username) |
+| Your Name | [@your-username](https://github.com/lorriluring) |
 
 ## Future Improvements
 
