@@ -104,7 +104,7 @@ Product: laban-231
 
 | Name | GitHub |
 | --- | --- |
-| Your Name | [@your-username](https://github.com/lorriluring) |
+| Johan Lorentz | [@Lorriluring](https://github.com/lorriluring) |
 
 ## Future Improvements
 
