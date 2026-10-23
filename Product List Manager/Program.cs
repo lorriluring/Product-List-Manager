@@ -6,8 +6,8 @@ Console.ResetColor();
 while (true)
 {
     // Read the product name from the user
-    var productName = Console.ReadLine();
-    if (productName == null || productName.ToLower().Trim() == "exit")
+    var productName = Console.ReadLine().ToLower().Trim();
+    if (productName == null || productName == "exit")
     {
         break;
     }
@@ -20,7 +20,7 @@ while (true)
         continue;
     }
     // Split the product name into parts based on the dash (-)
-    var parts = productName.Trim().Split('-');
+    var parts = productName.Split('-');
     if (parts.Length != 2)
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -65,7 +65,7 @@ while (true)
 
     {
         // Add the valid product name to the list
-        productList.Add(productName.Trim());
+        productList.Add(productName);
     }
 }
 // Sort the product list alphabetically
@@ -79,4 +79,3 @@ Console.WriteLine("\nProducts added!");
         Console.WriteLine("Product: " + product);
     }
 }
-
