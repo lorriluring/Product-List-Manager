@@ -1,16 +1,23 @@
-﻿var productList = new List<string> { };
+﻿// This is a simple console application that allows users to input product names in the format "name-number"
+using System.Text.RegularExpressions;
+var productList = new List<string> { };
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine("Enter your product names (type 'exit' to finish):");
 Console.ResetColor();
+
 // Start of the loop to read product names from the user
 while (true)
 {
     // Read the product name from the user
-    var productName = Console.ReadLine().ToLower().Trim();
-    if (productName == null || productName == "exit")
-    {
+    var productName = Console.ReadLine();
+
+
+    /* if (productName == null || productName == "exit")
+    
+    { 
         break;
-    }
+    } */
+   // productName = productName.ToLower().Trim();
     // Validate the product name
     if (string.IsNullOrWhiteSpace(productName))
     {
@@ -18,6 +25,11 @@ while (true)
         Console.WriteLine("Input cannot be empty.");
         Console.ResetColor();
         continue;
+    }
+    productName = productName.ToLower().Trim();
+   if (productName == "exit")
+    {
+        break;
     }
     // Split the product name into parts based on the dash (-)
     var parts = productName.Split('-');
@@ -28,8 +40,9 @@ while (true)
         Console.ResetColor();
         continue;
     }
+
     // Check if the left part contains only letters
-    bool lettersOnly = parts[0].Length > 0;
+    /*bool lettersOnly = parts[0].Length > 0;
     foreach (var c in parts[0])
     {
         // Check if the character is not an ASCII letter
@@ -37,7 +50,9 @@ while (true)
         {
             lettersOnly = false;
         }
-    }
+    } */
+
+    bool lettersOnly = Regex.IsMatch(parts[0], @"^[A-Za-z]+$");
     // Check if the right part contains only numbers
     if (!lettersOnly)
     {
